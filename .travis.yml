@@ -5,7 +5,7 @@ language: bash
 script:
 - docker-compose up multiarch
 - docker pull sofwerx/tor:arm-static
-- docker build --cache-from sofwerx/tor:arm-static -t sofwerx/tor:arm-static .
+- docker build --cache-from sofwerx/tor:arm-static --build-arg TOR_VERSION=$(echo ${TRAVIS_TAG} | sed -e 's/^v//') -t sofwerx/tor:arm-static .
 - docker-compose up tor
 after_success:
 - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
