@@ -34,8 +34,8 @@ RUN make install
 WORKDIR ..
 
 # Static toribuild
-ARG TOR_VERSION
-ENV TOR_VERSION=0.3.2.10
+ARG TOR_VERSION=0.3.2.10
+ENV TOR_VERSION $TOR_VERSION
 RUN curl -fsSL "https://www.torproject.com/dist/tor-${TOR_VERSION}.tar.gz" | tar xzf -
 WORKDIR tor-${TOR_VERSION}
 
