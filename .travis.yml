@@ -20,7 +20,7 @@ deploy:
   skip_cleanup: true
   api_key: "${GITHUB_TOKEN}"
   file:
-  - tor-${TRAVIS_TAG}
+  - tor-arm-static-${TRAVIS_TAG}
   on:
     tags: true
     repo: "${TRAVIS_REPO_SLUG}"
